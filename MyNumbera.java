@@ -20,10 +20,8 @@ public class MyNumbera {
 	// Trả ra danh sách các số chẵn nhỏ hơn number
 	public ArrayList GetSochan() {
 		ArrayList ListSochan = new ArrayList();
-		for (int i = 2; i < number; i++) {
-			if (number % 2 == 0)
-				;
-			{
+		for (int i = 0; i < number; i++) {
+			if (number % 2 == 0){
 				ListSochan.add(i);
 			}
 		}
@@ -33,10 +31,8 @@ public class MyNumbera {
 	// Trả ra danh sách các số lẻ nhỏ hơn number
 	public ArrayList GetSole() {
 		ArrayList ListSole = new ArrayList();
-		for (int i = 1; i < number; i++) {
-			if (number % 2 == 0.5)
-				;
-			{
+		for (int i = 0; i < number; i++) {
+			if (number % 2 != 0){
 				ListSole.add(i);
 			}
 		}
@@ -52,12 +48,25 @@ public class MyNumbera {
 		LSole = GetSole();
 
 		ArrayList ListSotonghop = new ArrayList();
+		for (int i = 0; i < LSochan.size(); i++ ) {
+			if (LSole.size()<=i) {
+				LSochan.get(i);
+			}
+			else if (LSochan.size()<=i) {
+				LSole.get(i);
+			}
+			else {(LSochan.get(i) + LSole.get(i))}
+				
+		}
+		return ListSotonghop();
 
 	}
-
 }
 
-	// Test
+
+
+
+// Test
 	@Test
 	public void Test_GetSochan() {
 		// Arrange
@@ -66,7 +75,7 @@ public class MyNumbera {
 
 		// Action
 		ArrayList val = TSC.GetSochan();
-		for (int i = 2; i < number; i++) {
+		for (int i = 0; i < number; i++) {
 			
 			System.out.println(val.get(i));
 		}
@@ -86,7 +95,7 @@ public void Test_GetSole() {
 	
 	//Action
 	ArrayList val = TSC.GetSole();
-	for (int i = 1; i < number; i++) {
+	for (int i = 0; i < number; i++) {
 		
 		System.out.println(val.get(i));
 	}
