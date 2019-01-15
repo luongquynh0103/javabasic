@@ -38,7 +38,7 @@ public class MyNumber {
 			int number = this.Numbers[i];
 			for(int j = 0; j< this.Numbers.length; j++) {
 				int checkNumber = this.Numbers[j];
-				if(number == checkNumber && i!=i) {
+				if(number == checkNumber && i!=j) {
 					isDupplicate = true;
 					break;
 				}
