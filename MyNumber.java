@@ -2,6 +2,9 @@ package InterfaceProcessing;
 
 import java.util.ArrayList;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public class MyNumber {
 	//Định nghĩa thuộc tính
 	public int[] Numbers;
@@ -37,7 +40,7 @@ public class MyNumber {
 			boolean isDupplicate = false;
 			int number = this.Numbers[i];
 			for(int j = 0; j< this.Numbers.length; j++) {
-				int checkNumber = this.Numbers[j];
+				int checkNumber = this.Numbers[i];
 				if(number == checkNumber && i!=j) {
 					isDupplicate = true;
 					break;
@@ -74,4 +77,45 @@ public class MyNumber {
 		
 	}
 
+}
+
+
+//Test
+@Test
+public void Check_GetMyNumber() {
+	//Arrange
+	int[] Numbers = {1,2,3,4,5,6,7,5};
+	MyNumber MyNum = new MyNumber(Numbers);
+	
+	//Action
+	ArrayList<Integer> ListMyNum = MyNum.GetMyNumber();
+	
+	//Assert
+	Assert.assertEquals(5, ListMyNum.size());
+	
+}
+@Test
+public void Check_GetTotal() {
+	//Arrange
+	int [] Numbers = {1,2,3,4,5,6,7,5};
+	MyNumber Sum = new MyNumber(Numbers);
+	
+	//Action
+	int Tong = Sum.GetTotal();
+	
+	//Assertion
+	Assert.assertEquals(2,Tong);
+}
+
+@Test
+public void Check_GetLuckyNumber() {
+	//Arrange
+	int [] Numbers = {1,2,3,4,5,6,7,5};
+	MyNumber SLK = new MyNumber(Numbers);
+	
+	//Action
+    ArrayList<Integer> ListLK = SLK.GetLuckyNumber();
+	
+	//Assert
+	Assert.assertEquals(5, ListLK.size());
 }
