@@ -13,7 +13,7 @@ public class MyNumber {
 	}
 	//Viết phương thức GetPrime check sô nguyên tố từ mảng Numbers
 	public ArrayList<Integer> GetPrime(){
-		ArrayList<Integer> IsPrime = new ArrayList();
+		ArrayList<Integer> IsPrime = new ArrayList<Integer>();
 		for (int i = 0; i < Numbers.length; i++) {
 			int currentNumber = Numbers[i];
 			boolean SNT = true;
