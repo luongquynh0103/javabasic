@@ -52,7 +52,7 @@ public class MyNumber {
 	
 	//Trả ra tổng tất cả các giá trị số nguyên tố chẵn
 	public int GetTotal() {
-		ArrayList TSC  = this.GetMyNumber();
+		ArrayList<Integer> TSC  = this.GetMyNumber();
 		int Sum = 0;
 		for (int i = 0; i < TSC.size(); i++) {
 			if(i % 2 == 0) {
