@@ -43,9 +43,20 @@ public class MyNumber1 {
 		int Min = this.GetMinNumber();
 		ArrayList<Integer> DistanceMinMax = new ArrayList<Integer>();
 		for (int i=0; i < ListNumber.length; i++) {
-			if(DistanceMinMax.get(i) > Min && DistanceMinMax.get(i)< Max);{
-				DistanceMinMax.add(i);
+			boolean Distan = false;
+			int Num = this.ListNumber[i];
+			for(int j=0; j < ListNumber.length; j++) {
+				int checkNumber = this.ListNumber[j];
+				if( Num == checkNumber && j > Min && j < Max  ) {
+					Distan = true;
+					break;
+				}
 			}
+			
+			if(Distan==false) {
+				DistanceMinMax.add(Num);
+			}
+			
 		}
 		return DistanceMinMax;
 		
